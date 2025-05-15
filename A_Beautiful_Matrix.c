@@ -15,7 +15,7 @@ int main()
         {
             if (arr[i][j] != 0)
             {
-               
+
                 printf("%d\n", abs(abs(3 - i) + abs(3 - j)));
             }
         }
