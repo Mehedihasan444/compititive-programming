@@ -4,6 +4,7 @@
         "string.h": "c",
         "stdlib.h": "c",
         "ios": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "iostream": "cpp"
     }
 }
