@@ -5,6 +5,10 @@
         "stdlib.h": "c",
         "ios": "cpp",
         "xiosbase": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "limits": "cpp",
+        "utility": "cpp",
+        "xutility": "cpp",
+        "cmath": "cpp"
     }
 }
