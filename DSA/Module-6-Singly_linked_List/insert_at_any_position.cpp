@@ -15,12 +15,18 @@ public:
 void insert_at_any_position(Node *head, int idx, int val)
 {
     Node *newNode = new Node(val);
-  
+
     Node *temp = head;
     int count = 0;
     while (count != idx - 1)
     {
         temp = temp->next;
+        if (temp == NULL)
+        {
+            cout << "Index out of bounds" << endl;
+            delete newNode; // Clean up the allocated memory
+            return;
+        }
         count++;
     }
     newNode->next = temp->next;
