@@ -29,19 +29,33 @@ public:
 int main()
 {
     myStack s;
-    s.push(10);
-    s.push(20);
-    s.push(30);
-    cout << "Top element: " << s.top() << endl; // Output: 30
-    s.pop();
-    cout << "Top element after pop: " << s.top() << endl; // Output
-    if (!s.empty())
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
     {
-        cout << s.top() << endl;
+        int x;
+        cin >> x;
+        s.push(x);
     }
-    if (!s.empty())
+
+    // s.push(10);
+    // s.push(20);
+    // s.push(30);
+    // cout << "Top element: " << s.top() << endl; // Output: 30
+    // s.pop();
+    // cout << "Top element after pop: " << s.top() << endl; // Output
+    // if (!s.empty())
+    // {
+    //     cout << s.top() << endl;
+    // }
+    // if (!s.empty())
+    // {
+    //     s.pop();
+    // }
+    while (!s.empty())
     {
-        s.pop();
+        cout << s.top() << endl; // Output the top element
+        s.pop();                 // Remove the top element
     }
 
     return 0;
