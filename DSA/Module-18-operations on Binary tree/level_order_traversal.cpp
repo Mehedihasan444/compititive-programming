@@ -21,14 +21,17 @@ void levelOrder(Node *root)
     q.push(root);
     while (!q.empty())
     {
+        if (root == NULL)
+            return;
         Node *f = q.front();
         q.pop();
         cout << f->val << " ";
-        if (f->left != NULL)
+        // f->left != NULL or
+        if (f->left)
         {
             q.push(f->left);
         }
-        if (f->right != NULL)
+        if (f->right)
         {
             q.push(f->right);
         }
