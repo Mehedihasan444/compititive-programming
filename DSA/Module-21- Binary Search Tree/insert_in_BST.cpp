@@ -1,0 +1,117 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node
+{
+public:
+    int val;
+    Node *left;
+    Node *right;
+
+    Node(int val)
+    {
+        this->val = val;
+        this->left = nullptr;
+        this->right = nullptr;
+    }
+};
+Node *inputTree()
+{
+    int val;
+    cin >> val;
+    Node *root;
+    if (val == -1)
+    {
+        root = nullptr;
+    }
+    else
+    {
+        root = new Node(val);
+    }
+    queue<Node *> q;
+    q.push(root);
+    while (!q.empty())
+    {
+        Node *node = q.front();
+        q.pop();
+        int l, r;
+        cin >> l >> r;
+        Node *left = nullptr, *right = nullptr;
+        if (l != -1)
+        {
+            left = new Node(l);
+        }
+        if (r != -1)
+        {
+            right = new Node(r);
+        }
+        node->left = left;
+        node->right = right;
+        if (node->left)
+            q.push(node->left);
+        if (node->right)
+            q.push(node->right);
+    }
+    return root;
+}
+void insert(Node *&root, int val)
+{
+    if (root == nullptr)
+    {
+        root= new Node(val);
+        return;
+    }
+
+    if (root->val > val)
+    {
+        if(root->left==nullptr)
+        root->left=new Node(val);
+        else
+        insert(root->left, val);
+    }
+    else
+       {
+        if(root->right==nullptr)
+        root->right=new Node(val);
+        else
+        insert(root->right, val);
+       }
+       
+}
+void levelOrder(Node *root)
+{
+    if (root == NULL)
+    {
+        cout << "Tree is empty." << endl;
+        return;
+    }
+    queue<Node *> q;
+    q.push(root);
+    while (!q.empty())
+    {
+        if (root == NULL)
+            return;
+        Node *f = q.front();
+        q.pop();
+        cout << f->val << " ";
+        // f->left != NULL or
+        if (f->left)
+        {
+            q.push(f->left);
+        }
+        if (f->right)
+        {
+            q.push(f->right);
+        }
+    }
+}
+int main()
+{
+    Node *root = inputTree();
+    int val;
+    cin >> val;
+    insert(root, val);
+  levelOrder(root);
+
+    return 0;
+}
