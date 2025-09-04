@@ -65,6 +65,7 @@ void insert_at_any_pos(Node *&head, Node *&tail, int val, int idx)
     if (temp == NULL)
     {
         insert_at_tail(head, tail, val);
+        return;
     }
 
     newNode->next = temp->next;
