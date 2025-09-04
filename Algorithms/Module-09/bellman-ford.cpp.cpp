@@ -58,7 +58,7 @@ int main()
         }
     }
     if (negative_cycle)
-    {
+    { 
         cout << "Negative Cycle Detected!" << endl;
         return 0;
     }
